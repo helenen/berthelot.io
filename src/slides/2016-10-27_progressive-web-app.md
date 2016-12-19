@@ -1,3 +1,8 @@
+---
+title: Soirée Progressives Web App
+date: 2016-10-27
+---
+
 <!-- .slide: data-background="#ff9900" -->
 # Soirée - Progressives Web App
 
@@ -17,7 +22,7 @@
 ## PWA - La naissance
 
 Difficile de faire la différence sur les stores
-![Number of app downloads in USA](2016-10-27-Progressive_Web_App/us-smartphone-users-number-of-app-downloads-per-month-of-smartphone-users-new_chartbuilder-1.png)
+![Number of app downloads in USA](../assets/us-smartphone-users-number-of-app-downloads-per-month-of-smartphone-users-new_chartbuilder-1.png)
 
 
 <!-- .slide: data-background="#00ffc4" -->
@@ -57,7 +62,7 @@ PWA = Une web app normale qui rocks !
 <!-- .slide: data-background="#00ffc4" -->
 ## PWA - L'installation
 
-![Installation d'une PWA](2016-10-27-Progressive_Web_App/add-to-home-screen.gif)
+![Installation d'une PWA](../assets/add-to-home-screen.gif)
 
 Notes:
 Installation quasi instantanée (faite lors du premier chargement)
@@ -77,14 +82,14 @@ Installation quasi instantanée (faite lors du premier chargement)
 <!-- .slide: data-background="#00a6ff" -->
 ## Let's try it
 
-![Start](2016-10-27-Progressive_Web_App/start.gif)
+![Start](../assets/start.gif)
 
 
 
 <!-- .slide: data-background="#00a6ff" -->
 ## Share
 
-![Share](2016-10-27-Progressive_Web_App/share.gif)
+![Share](../assets/share.gif)
 
 Notes : Au cours du TP, demander aux participants ce qu'ils ont envie de partager. Aggréger, puis pendant 15 minutes, donner la parole à chacun pour qu'ils expriment leurs idées.
 

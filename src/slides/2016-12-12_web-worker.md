@@ -1,3 +1,9 @@
+---
+title: Soirée Web Worker
+date: 2016-12-12
+---
+
+
 <!-- .slide: data-background="#000000" -->
 # Soirée - Web worker
 
@@ -14,14 +20,14 @@
 
 <!-- .slide: data-background="#000000" -->
 ## Les Web Worker - Étienne Crombez
-![](2016-12-12-web_worker/webWorker.png)
+![](../assets/webWorker.png)
 
 
 
 <!-- .slide: data-background="#000000" -->
 ## Share
 
-![Share](2016-10-27-Progressive_Web_App/share.gif)
+![Share](../assets/share.gif)
 
 
 <!-- .slide: data-background="#000000" -->

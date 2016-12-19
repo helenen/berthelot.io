@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- v-{{version}} -->
+    <meta charset="UTF-8">
+    <title>Florent Berthelot - Slides</title>
+
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/home.css">
+</head>
+<body>
+
+    <header>
+        <h1>My slides</h1>
+
+        <div class="sub-title">
+            <h2>Florent Berthelot</h2>
+        </div>
+    </header>
+
+    <div class="container">
+        <ul class="slide-list">
+            {{#each pagination.files}}
+            <li>
+                <a href="{{baseUrl}}{{replaceMdToHtml this.path}}">
+                    <div class="slide-title">
+                        <strong>{{this.title}}</strong>
+                    </div>
+                    <div class="slide-date">
+                        {{dateFormat this.date}}
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+
+        <ul class="pagination">
+            {{#if pagination.previous}}
+                <li class="pagination-item">
+                    <a class="pagination-item-link" href="{{baseUrl}}{{pagination.previous.path}}">Précédente</a>
+                </li>
+            {{else}}
+                <li class="pagination-item pagination-item--inactive">
+                    <span>Précédente</span>
+                </li>
+            {{/if}}
+
+            {{#each pagination.pages}}
+                <li class="pagination-item">
+                    <a class="pagination-item-link" href="{{baseUrl}}{{this.path}}">{{this.pagination.num}}</a>
+                </li>
+            {{/each}}
+
+            {{#if pagination.next}}
+                <li class="pagination-item">
+                    <a class="pagination-item-link" href="{{baseUrl}}{{pagination.next.path}}">Suivante</a>
+                </li>
+            {{else}}
+                <li class="pagination-item pagination-item--inactive">
+                    <span>Suivante</span>
+                </li>
+            {{/if}}
+        </ul>
+    </div>
+</body>
+</html>

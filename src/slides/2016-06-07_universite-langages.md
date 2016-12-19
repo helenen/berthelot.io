@@ -1,3 +1,8 @@
+---
+title: Université des langages - JavaScript
+date: 2016-06-07
+---
+
 <!-- .slide: data-background="#ff9900" -->
 # Université des langages - JS
 
@@ -175,7 +180,7 @@ Une fonction capture le scope parent !
 ```javascript
 var bar = 'hellow';
 
-function foo () { 
+function foo () {
     console.log(bar);
 }
 
@@ -195,7 +200,7 @@ le mot clé this fait référence à un scope, mais lequel ?
 ```javascript
 function () {
     function foo() { console.log(this); }
-    
+
     foo();                          // this = scope appelant
     new foo();                      // this = instance de la classe
     var object = { bar: foo };
@@ -260,7 +265,7 @@ http://blog.xebia.fr/2013/06/10/javascript-retour-aux-bases-constructeur-prototy
 <!-- .slide: data-background="#00a6ff" -->
 ## Rétrocompatibilité !
 
-![](/2016-06-07_universite-langages-js/javascript.png)
+![](../assets/javascript.png)
 
 
 <!-- .slide: data-background="#00a6ff" -->
@@ -291,11 +296,11 @@ console.log(i); // undefined
 function () {
     this.test = [1, 2, 4, 5];
     this.multiple = 2;
-    
+
     let firstWay = this.test.map((value) => {
         return this.value * this.multiple;
     });
-    
+
     const secondWay = this.test.map( x => x * this.multiple);
 }
 ```
@@ -311,11 +316,11 @@ class chien () extends animal {
     constructor () {
       super();
     }
-    
+
     uneMethode () {
        return 42;
     }
-    
+
     static uneMethodeStatic() { return 43; }
 }
 ```
@@ -373,7 +378,7 @@ function *countTo3() {
 }
 
 let iterator = countTo3();
- 
+
 console.log(iterator.next()); // { value: 1, done: false }
 console.log(iterator.next()); // { value: 2, done: false }
 console.log(iterator.next()); // { value: 3, done: false }
@@ -596,12 +601,12 @@ Ils sont itérables !
 Identique aux Map | Set mais :
  - ne sont pas itérable
  - n'influence pas le grabage collector (les valeurs peuvent disparaitre si les clés disparaissent)
- 
+
 ```javascript
 let unWeakMap = new WeakMap();
 let unWeakSet = new WeakSet();
 ```
- 
+
 
 
 <!-- .slide: data-background="rgb(255, 175, 70)" -->
@@ -659,9 +664,9 @@ console.log(p.c, p.d, p.r); // 36, 'pas de gros mots !', 42
 async function maFunction() {
     const userInfo = await getUserInfo();
     const userID = userInfo.id;
-    
+
     const friendList = await getFriend(userID);
-    
+
     console.log('friend list of ', userInfo.name, ':', friendList);
 };
 ```

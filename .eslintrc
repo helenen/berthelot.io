@@ -1,0 +1,10 @@
+{
+  "extends": "fberthelot",
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "Reveal": true,
+    "hljs": true
+  }
+}

@@ -1,4 +1,4 @@
-# Mes prez Tribu Web
+# Florent Berthelot's slides
 
 [![Build Status](https://travis-ci.org/FBerthelot/tribu-web-prez.svg?branch=master)](https://travis-ci.org/FBerthelot/tribu-web-prez)
 [![Dependency Status](https://david-dm.org/FBerthelot/tribu-web-prez.svg)](https://david-dm.org/FBerthelot/tribu-web-prez)
