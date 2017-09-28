@@ -218,7 +218,7 @@ Le JS est un langage prototypé
 
 ```javascript
 function chien () {
- this.crie = functio () {
+ this.crie = function () {
   console.log('miaou');
  }
 }
@@ -265,7 +265,7 @@ http://blog.xebia.fr/2013/06/10/javascript-retour-aux-bases-constructeur-prototy
 <!-- .slide: data-background="#00a6ff" -->
 ## Rétrocompatibilité !
 
-![](../assets/javascript.png)
+![](../assets/Javascript.png)
 
 
 <!-- .slide: data-background="#00a6ff" -->
@@ -298,10 +298,10 @@ function () {
     this.multiple = 2;
 
     let firstWay = this.test.map((value) => {
-        return this.value * this.multiple;
+        return value * this.multiple;
     });
 
-    const secondWay = this.test.map( x => x * this.multiple);
+    const secondWay = this.test.map(x => x * this.multiple);
 }
 ```
 
@@ -312,7 +312,7 @@ Une manière d'avoir des fonction sans perdre le `this` !
 ## Classes
 
 ```javascript
-class chien () extends animal {
+class chien extends animal {
     constructor () {
       super();
     }
@@ -320,7 +320,8 @@ class chien () extends animal {
     uneMethode () {
        return 42;
     }
-
+    
+    uneMethodeDuParent() { super.bien(); }
     static uneMethodeStatic() { return 43; }
 }
 ```
@@ -375,6 +376,7 @@ function *countTo3() {
       yield 1;
       yield 2;
       yield 3;
+      return 42;
 }
 
 let iterator = countTo3();
@@ -382,7 +384,7 @@ let iterator = countTo3();
 console.log(iterator.next()); // { value: 1, done: false }
 console.log(iterator.next()); // { value: 2, done: false }
 console.log(iterator.next()); // { value: 3, done: false }
-console.log(iterator.next()); // { value: undefined, done: true }
+console.log(iterator.next()); // { value: 42, done: true }
 ```
 
 Notes: La puissances des coroutines !!
@@ -608,7 +610,6 @@ let unWeakSet = new WeakSet();
 ```
 
 
-
 <!-- .slide: data-background="rgb(255, 175, 70)" -->
 ## Opérateur de puissance
 
@@ -649,7 +650,7 @@ console.log(p.c, p.d, p.r); // 36, 'pas de gros mots !', 42
 
 
 <!-- .slide: data-background="#59d0ffcc" -->
-## Bonus 2 - Ce qui va venir
+## Bonus 2 - ES2017
 
 - Async function
 - SIMD API
@@ -700,3 +701,15 @@ const test = {
 Pour du code review avec moins de bruit !
 
 Perso j'aime pas, trop verbeux...
+
+
+
+<!-- .slide: data-background="#59d0ffcc" -->
+## Bonus 3 - ES2018
+
+- Global
+- ES Modules !!
+- Regex Improvement
+- Promise.prototype.finnaly
+- BigInt
+- Class field
