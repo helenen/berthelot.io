@@ -3,3 +3,7 @@
     border: none;
     margin: auto;
 }
+
+.reveal cite {
+    font-style: oblique;
+}
