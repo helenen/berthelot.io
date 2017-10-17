@@ -153,3 +153,134 @@ define(['motDePasse'], function (mdp) {
 
 ## ES Module
 
+![Ecma](https://www.ecma-international.org/ecma-262/5.1/Ecma_RVB-003.jpg)
+
+
+## ES Module
+
+```javascript
+// Fichier A
+export const password = 'sexyBitch50';
+```
+```javascript
+// Fichier B
+import {password} from './fichierA';
+console.log('florent t'es nul pour cacher les MDP ${password}');
+```
+
+
+
+## ES Module
+
+La spec arrive avec ES2015.
+Elle ne pose pas de problème pour les Navigateurs
+Pose problème pour NodeJS
+
+
+
+## ES Module
+
+![What ?!](https://media0.giphy.com/media/3o6YglDndxKdCNw7q8/giphy.gif)
+
+
+
+## ES Module
+
+```javascript
+// fichier a.js
+console.log('Execution de a.js')
+import { afficherPassword } from './b.js'
+afficherPassword();
+```
+```javascript
+// fichier b.js
+console.log('Execution de b.js')
+export function afficherPassword () {
+  console.log('leMDPDeFlorent');
+}
+```
+
+
+
+## ES Module
+
+```bash
+Execution de b.js
+Execution de a.js
+leMDPDeFlorent
+```
+
+
+
+## ES Module
+
+ES Module est Asynchrone !
+![Check](https://media3.giphy.com/media/geYwtodB9AiI0/giphy.gif)
+
+
+## ES Module
+
+```javascript
+// fichier a.js
+console.log('Execution de a.js')
+const afficherPassword = require('./b.js');
+afficherPassword();
+```
+```javascript
+// fichier b.js
+console.log('Execution de b.js');
+module.exports = function() {
+  console.log('leMDPDeFlorent');
+}
+```
+
+
+
+## ES Module
+
+```bash
+Execution de a.js
+Execution de b.js
+leMDPDeFlorent
+```
+
+
+
+## ES Module
+
+![Mickael Jackson alive](https://michaeljacksonlies.files.wordpress.com/2013/06/backcover1small.jpg)
+
+
+
+## ES Module
+
+En septembre 2018, pour nodeJS >8.7.0 :
+ - Fichier finissant par `.mjs` = ES Module
+ - Fichier finissant par `.js` = CommonJS
+
+
+
+## ES Module
+
+Mais impossible de faire ça alors les imports
+```javascript
+const yolo = Math.floor(Math.random() * 10);
+const passeraOuPas = require(`./fichier-${yolo}`);
+```
+
+
+
+## ES Module
+
+Si car en ES2019 nous aurons
+```javascript
+const yolo = Math.floor(Math.random() * 10);
+import(`./fichier-${yolo}`)
+  .then(module => console.log('le module existait bien !!'))
+  .catch(err => console.error(err, 'le module n\'existe pas... raté !'));
+```
+
+
+## Fin
+
+![Vers l'infini et l'au delà](https://media0.giphy.com/media/ibZ3IcD2d5te0/giphy.gif)
