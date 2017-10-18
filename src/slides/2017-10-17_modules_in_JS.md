@@ -91,7 +91,7 @@ dojo VS Mozilla VS Ecma
 
 ```javascript
 // Fichier A
-module.exports.password = 'ceciEstUnSecret';
+module.exports = 'ceciEstUnSecret';
 ```
 ```javascript
 // Fichier B
