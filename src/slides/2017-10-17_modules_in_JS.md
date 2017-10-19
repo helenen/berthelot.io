@@ -253,7 +253,7 @@ leMDPDeFlorent
 
 ## ES Module
 
-En septembre 2018, pour nodeJS >8.7.0 :
+En septembre 2017, pour nodeJS >8.7.0 :
  - Fichier finissant par `.mjs` = ES Module
  - Fichier finissant par `.js` = CommonJS
 
@@ -269,7 +269,7 @@ const passeraOuPas = require(`./fichier-${yolo}`);
 
 ## ES Module
 
-Ça sera possible car en ES2019 nous aurons
+Ça sera possible car en ES2018 nous aurons
 ```javascript
 const yolo = Math.floor(Math.random() * 10);
 import(`./fichier-${yolo}`)

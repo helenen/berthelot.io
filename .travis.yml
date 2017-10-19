@@ -1,22 +1,19 @@
 language: node_js
 node_js:
-  - "6"
+  - "8"
 
 cache:
   directories:
     - node_modules
 
-env:
-  global:
-  - GH_REF: github.com/FBerthelot/tribu-web-prez.git
-  - secure: r3kDjH2apRZa5CH1vMUeOhqObZtA5oKmsrZn1JzO2ntA6VcfAfmZzQrit6zgJrQVhG0dW7wOQivj4qTRwEEqlgZi9A0Jdb3cENkLNuvZ8jP9iZt/rYX1G1RYWTvQxjIOGhKKgLH5rpInWMP0RQ5zpoT/pzkVnbtfUf2oleI1knkFZ60wKSpMjMkYqz+xENXRpw1lBzS4PW41rSWxspedbYFqJYZrYelZ/JWUSBR+nExCgkOwwNT3kGQm3SDiWe25Y1TNdVunqnVWSVtQXGW2L6b2hGw2YeKO4X/gRum5oGXAKhavf8bqGyBkDslpLPuweSZTkpYrKmS8HQOYlybML4OloOYzLvLg85KsYaErYyqGr5ij8e748XWJZxCKWUvFrJeuIjrFLI7LeHJEQ3MTFBddlRCSGzBGkA9c+oDKmqVRYi77VZNH0B/3+t3XM7GYRDyW6WsQSEipgeIQi95v4zD8PMiu4hEzalSK4kGfQYcnpuhCfDsx3LbvA8tKEUzE5Tx6acITmX0ToSPuL7JyLIHKaPMUVypK1jhAnOUyv2V5LjgdcM/rGtpwrKbLW/kiYcj+FVQZvFCLsc7y1QdcxVuv7lYWBymBki56IzTHmpviHmjTkqIf7aDAaMAdAIawKu9zgLTneAmKcGd/8251iokHSlWM3ynkm9D5GrZu3ts=
-
 script:
  - npm test
+ - npm build
 
 deploy:
+  provider: pages
   skip_cleanup: true
-  provider: script
-  script: npm run deploy
-on:
-  branch: master
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  local_dir: './build/'
+  on:
+    branch: master

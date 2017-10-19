@@ -7,7 +7,6 @@
     "build": "node build",
     "start": "node build serve watch",
     "predeploy": "NODE_ENV=production npm run build",
-    "deploy": "./scripts/deploy-gh-pages.sh",
     "test": "eslint build.js src/**/*.js"
   },
   "author": "FBerthelot <florent.berthelot35@gmail.com>",
