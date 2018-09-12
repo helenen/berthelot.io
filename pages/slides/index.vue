@@ -1,5 +1,11 @@
 <template>
   <main>
+    <nuxt-link
+      class="back-button"
+      to="/">
+      &lt;-
+    </nuxt-link>
+
     <h1>Mes slides</h1>
 
     <div class="slide-container">
@@ -73,9 +79,16 @@ export default {
 </script>
 
 <style scoped>
+  .back-button {
+    position: absolute;
+    top: 5vh;
+    left: 5vh;
+    font-size: 1.3rem;
+  }
+
   main {
     background: linear-gradient(90deg, #4B6CB7 0%, #550a55 100%);
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
   }
 
@@ -95,6 +108,12 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0 10px;
+  }
+
+  @media (max-width: 600px){
+    .slide-container {
+      grid-template-columns: 1fr;
+    }
   }
 
   article {

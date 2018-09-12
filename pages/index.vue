@@ -93,11 +93,14 @@ export default {
 
 <style scoped>
   .explosion {
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
   }
   .hideVideo {
     display: none;
@@ -294,6 +297,37 @@ export default {
       color: #0d6c0d;
       border-radius: 10px;
       width: 15vh;
+    }
+  }
+
+  @media (max-width: 600px){
+    .loveu {
+      width: 35vw;
+    }
+    .joker {
+      margin-top: -40vh;
+    }
+    .title {
+      margin-top: 50vh;
+    }
+    @keyframes titleapear {
+      from {
+        opacity: 0;
+        font-size: 1rem;
+      }
+      to {
+        opacity: 1;
+        font-size: 2rem;
+      }
+    }
+    nav {
+      bottom: 15px;
+    }
+    nav ul  {
+      flex-direction: column;
+    }
+    nav ul li {
+      margin-bottom: 5px;
     }
   }
 </style>
