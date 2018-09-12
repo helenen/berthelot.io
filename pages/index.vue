@@ -20,7 +20,9 @@
     </div>
 
     <main>
-      <loveu v-if="!videoIsRunning" class="loveu" />
+      <loveu
+        v-if="!videoIsRunning"
+        class="loveu" />
 
       <h1
         :class="{titleAnimation: !videoIsRunning}"
@@ -50,7 +52,9 @@
             </a>
           </li>
           <li>
-            <nuxt-link to="/slides" :class="{slidesLaunch: !videoIsRunning}">
+            <nuxt-link
+              :class="{slidesLaunch: !videoIsRunning}"
+              to="/slides">
               Slides
             </nuxt-link>
           </li>
@@ -226,7 +230,6 @@ export default {
       transform: translate3d(-300vw, -25vh, 0);
     }
   }
-
 
   main nav ul a:hover {
     background-color: #550a55;
