@@ -1,40 +1,33 @@
 {
-  "name": "tribu-web-prez",
+  "name": "berthelot.io",
   "version": "1.0.0",
-  "description": "Florent berthelot slides",
-  "main": "build.js",
-  "scripts": {
-    "build": "node build",
-    "start": "node build serve watch",
-    "predeploy": "NODE_ENV=production npm run build",
-    "test": "eslint build.js src/**/*.js"
-  },
-  "author": "FBerthelot <florent.berthelot35@gmail.com>",
+  "description": "Personal web site of Florent Berthelot ",
+  "author": "FBerthelot <florent@berthelot.io>",
   "license": "SEE LICENSE IN LICENSE.md FILE",
   "private": true,
+  "scripts": {
+    "reveal": "cp -r node_modules/reveal.js/ static/reveal/",
+    "dev": "npm run reveal && nuxt",
+    "build": "npm run reveal && nuxt build",
+    "start": "npm run reveal && nuxt start",
+    "generate": "npm run reveal && nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "animejs": "^2.2.0",
+    "nuxt": "^1.0.0",
+    "reveal.js": "^3.7.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/FBerthelot/tribu-web-prez"
   },
   "devDependencies": {
-    "eslint": "^3.12.2",
-    "eslint-config-fberthelot": "0.0.2",
-    "handlebars": "^4.0.6",
-    "metalsmith": "^2.3.0",
-    "metalsmith-assets": "^0.1.0",
-    "metalsmith-autoprefixer": "^1.1.1",
-    "metalsmith-browser-sync": "^1.1.1",
-    "metalsmith-clean-css": "^5.0.0",
-    "metalsmith-collections": "^0.9.0",
-    "metalsmith-filemetadata": "^1.0.0",
-    "metalsmith-html-minifier": "^2.2.0",
-    "metalsmith-layouts": "^1.7.0",
-    "metalsmith-pagination": "^1.4.0",
-    "metalsmith-serve": "0.0.7",
-    "metalsmith-watch": "^1.0.3",
-    "moment": "^2.17.1"
-  },
-  "dependencies": {
-    "reveal.js": "^3.2.0"
+    "babel-eslint": "^8.2.1",
+    "eslint": "^5.5.0",
+    "eslint-config-xo-space": "^0.20.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0"
   }
 }

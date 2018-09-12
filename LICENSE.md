@@ -1,3 +1,3 @@
-All rights reserved to florent berthelot.
+DO WHAT YOU WANT !!
 
-If you want to copy any part of this project, ask me :)
+It's cool if you notice me ;)
