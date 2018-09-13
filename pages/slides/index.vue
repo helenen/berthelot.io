@@ -6,7 +6,7 @@
       &lt;-
     </nuxt-link>
 
-    <h1>Mes slides</h1>
+    <h1>Mes slides et vidéos</h1>
 
     <div class="slide-container">
       <article
@@ -38,14 +38,44 @@ export default {
       slides: [
         {
           title: 'JavaScript',
-          description: 'La presentation qui présente l\'ensemble des nouveautées javascript et repose les bases du langage',
+          description: 'La presentation qui présente l\'ensemble des nouveautées javascript et repose les bases du langage.',
           url: '/slides/javascript.html',
           external: true
         },
         {
           title: 'Les modules en JavaScript',
-          description: 'Laissez-moi vous raconter l\' histoire des modules en Javascript',
+          description: 'Laissez-moi vous raconter l\' histoire des modules en Javascript.',
           url: '/slides/es-modules.html',
+          external: true
+        },
+        {
+          title: 'Les framework JavaScript',
+          description: 'Slide issue d\'une matinal sur les Framework JavaScrip.t',
+          url: 'https://docs.google.com/presentation/d/1l7pXU3k2dDEo1MOleZF22hsWQlYbUuBiSjhzLNJaxpE/edit#slide=id.g1e43053bed_0_176',
+          external: true
+        },
+        {
+          title: 'La toile en VR - slides',
+          description: 'Présentation à Devoxx sur le Web VR et plus particulièrement A-Frame et React-VR.',
+          url: 'https://fberthelot.github.io/la_toile_en_vr/slides/#/',
+          external: true
+        },
+        {
+          title: 'La toile en VR - Video youtube',
+          description: 'Vidéo de la présentation à Devoxx sur le Web VR et plus particulièrement A-Frame et React-VR.',
+          url: 'https://www.youtube.com/watch?v=JLhugL7Hvgc',
+          external: true
+        },
+        {
+          title: 'Réconcilions Web & Audio',
+          description: 'C\'est l\'histoire de deux mec qui veulent faire une pédale de distortion en Web pour réconcilier les surfeurs au bruit.',
+          url: 'https://slides.com/benjaminplouzennec/reconcilions-web-et-audio#/7/4',
+          external: true
+        },
+        {
+          title: 'Package ? Tout compris !',
+          description: 'À l\'époque Yarn et NPM se battait, bower survivait encore. Mais qu\'est ce c\'est un bon package manager ? - Talk fait au snowcamp.',
+          url: 'https://docs.google.com/presentation/d/1JuNunEmZk8zQf2lJccUP1YfJYRPWzHxgkhD9GQaQIFw',
           external: true
         },
         {
@@ -56,22 +86,30 @@ export default {
         },
         {
           title: 'Tribu Web Zenika - Soirée Progressive Web App',
-          description: 'La Tribu Web de Zenika vous propose une soirée autour des progressive web app',
+          description: 'La Tribu Web de Zenika vous propose une soirée autour des progressive web app.',
           url: '/slides/tribu-web-pwa.html',
           external: true
         },
         {
           title: 'Tribu Web Zenika - Soirée Web Worker',
-          description: 'La Tribu Web de Zenika vous propose une soirée autour des web worker',
+          description: 'La Tribu Web de Zenika vous propose une soirée autour des web worker.',
           url: '/slides/tribu-web-web-worker.html',
           external: true
         },
         {
           title: 'Tribu Web Zenika - TP React',
-          description: 'Ma première présentation pour la Tribu Web de Zenika',
+          description: 'Ma première présentation pour la Tribu Web de Zenika.',
           url: '/slides/tribu-web-react.html',
           external: true
         }
+      ]
+    };
+  },
+  head() {
+    return {
+      title: 'Mes slides et vidéos - Florent Berthelot - Dévelopeur et formateur Web',
+      meta: [
+        {hid: 'description', name: 'Un regroupement de liens vers mes slides de présentation et mes vidéos en conférence.'}
       ]
     };
   }

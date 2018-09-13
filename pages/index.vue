@@ -87,6 +87,14 @@ export default {
     explosionEnd() {
       this.videoIsRunning = false;
     }
+  },
+  head() {
+    return {
+      title: 'Florent Berthelot - Dévelopeur et formateur Web',
+      meta: [
+        {hid: 'description', name: 'Site perso d\'un passionné de web. Si tu clique sur ce lien, tu vas avoir une surprise !'}
+      ]
+    };
   }
 };
 </script>
