@@ -119,7 +119,6 @@ export default {
   article {
     box-shadow: 2px 2px #550a55;
     background-color: #BB4316;
-    padding: 5vh 5vw;
     margin: 15px 10px;
     color: white;
     border-radius: 5px;
@@ -127,6 +126,11 @@ export default {
   }
   article:hover {
     transform: scale(1.05);
+  }
+
+  article a {
+    display: block;
+    padding: 5vh 5vw;
   }
 
   article h2 {
