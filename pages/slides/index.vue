@@ -37,6 +37,12 @@ export default {
     return {
       slides: [
         {
+          title: 'Tester des composants',
+          description: 'Comment faire des tests maintenable en TDD et même en BDD avec Angular ? La réponse dans cette présentation !',
+          url: 'https://slides.com/florentberthelot/test-composants-web',
+          external: true
+        },
+        {
           title: 'JavaScript',
           description: 'La presentation qui présente l\'ensemble des nouveautées javascript et repose les bases du langage.',
           url: '/slides/javascript.html',
