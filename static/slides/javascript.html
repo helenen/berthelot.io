@@ -20,21 +20,26 @@
                     data-charset="UTF-8">
                 <script type="text/template">
                   <!-- .slide: data-background="#ff9900" -->
-                  # Université des langages - JS
+                  # Le Javascript
 
 
 
                   <!-- .slide: data-background="#0af" -->
-                  ## Déroulement de la soirée
+                  ## Programme
 
                   - Historique
-                  - Le JS de maman
-                  - Le JS de papa
+                  - Les racines du JS, ES5
+                  - ES6 / ES2015
+                  - ES2016
+                  - ES2017
+                  - ES2018
+                  - Et la suite ?
+
                   - Pratiquons !
 
 
 
-                  <!-- .slide: data-background="#00ffc4" -->
+                  <!-- .slide: data-background="#273E47" -->
                   ## Historique
 
                   - Au début : WWW était du print
@@ -48,13 +53,14 @@
                   Notes:
                   JS anciennement appelé LiveScript
                   Netscape a remplacé appelé NCSA Mosaic
-                  A la mort de netscape JS passé à ecma international
+                  A la mort de netscape JS passé à ECMA international
 
 
 
-                  <!-- .slide: data-background="#ff9eef" -->
-                  ## Le JS à Maman (ES5)
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Les racines du JS, ES5
 
+                  - Types
                   - Variables
                   - Fonctions
                   - Assertions
@@ -64,32 +70,43 @@
                   - Prototypes
 
 
-                  <!-- .slide: data-background="#ff9eef" -->
-                  ## Variables
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Types
 
+                  JavaScript est un langage faiblement typé<br>
+                  le typage est induit !
                   ```javascript
-                  // Un commentaire
-                  var maVariable; // undefined
+                    // Un commentaire
 
-                  var unNombre = 1;
-                  var chaineDeCaractere = 'toto'; /* doubleQuote ça marche aussi */
-                  var booleen = true; // false
-                  maVariable = null;
-                  maVariable = uneFonction;
-                  maVariable = unNombre;
+                    // types prémitifs
+                    undefined;
+                    null;
+                    true; // booleen
+                    1; // number
+                    'toto'; // string
 
-                  unTableau = [1, true, 'une string', {}];
-                  unObject = {
-                    cle: 1,
-                    cle2: {
-                       toto: 'tata'
-                    }
-                    cle4: [1, 2, 3, 4]
-                  };
+                    // types par références
+                    [1, true, 'une string', {}]; // array
+                    {cle: 1}; // object
                   ```
 
 
-                  <!-- .slide: data-background="#ff9eef" -->
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Variables
+
+                  ```javascript
+                    var maVariable; // undefined
+
+                    var unNombre = 1;
+                    var chaineDeCaractere = 'toto'; /* doubleQuote ça marche aussi */
+                    var booleen = true;
+                    maVariable = null;
+                    maVariable = uneFonction;
+                    maVariable = unNombre;
+                  ```
+
+
+                  <!-- .slide: data-background="#D8C99B" -->
                   ## Les fonctions
 
                   ```javascript
@@ -108,34 +125,49 @@
                   ```
 
 
-                  <!-- .slide: data-background="#ff9eef" -->
+                  <!-- .slide: data-background="#D8C99B" -->
                   ## Assertions
 
                   ```javascript
                   '1' == 1; // true
-                  true == 'true'; // true
-
-                  NaN == NaN; // true
+                  true == '1'; // true
+                  true == 1; // true
                   ```
 
                   ** Coercition du type ! **
 
 
-                  <!-- .slide: data-background="#ff9eef" -->
+                  <!-- .slide: data-background="#D8C99B" -->
                   ![WTF!](http://gif.co/rHOV.gif)
 
 
-                  <!-- .slide: data-background="#ff9eef" -->
+                  <!-- .slide: data-background="#D8C99B" -->
                   ## Assertions
 
-                  Toujours utiliser un triple égale, qui ne convertie pas le type
+                  Toujours utiliser un triple égale<br>
+                  pour ne par convertir le type
 
                   ```javascript
-                  1 === 1; // true
-                  true !== false; // true
+                    1 === 1; // true
+                    true !== false; // true
 
+                    1 > 2; // false
+                    1 >= 2;// false
+                    1 < 2; // true
+                    1 <= 2;// true
+
+                    true && false; // false
+                    true || false; // true
+                  ```
+
+
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Block conditionel
+
+                  ```Javascript
                   var variable1 = true;
                   var variable2 = false;
+
                   if (variable1 || variable2) {
                      console.log('ça passe');
                   }
@@ -146,7 +178,7 @@
                   ```
 
 
-                  <!-- .slide: data-background="#ff9eef" -->
+                  <!-- .slide: data-background="#D8C99B" -->
                   ## Boucles
 
                   Du classique : `for` et `while`
@@ -157,6 +189,10 @@
                     it++;
                   }
 
+                  do {
+                    it++;
+                  } while(it < 10)
+
                   for (var i = 0; i < 10; i++;) {}
 
                   for (var i in [1, 'a', 3, '5']) {
@@ -165,7 +201,7 @@
                   ```
 
 
-                  <!-- .slide: data-background="#ff9eef" -->
+                  <!-- .slide: data-background="#D8C99B" -->
                   ## Scope
                   Scope = portée d'un symbole
 
@@ -188,7 +224,7 @@
                   Notes: On peux déclarer les fonctions dans n'importe quel ordre
 
 
-                  <!-- .slide: data-background="#ff9eef" -->
+                  <!-- .slide: data-background="#D8C99B" -->
                   ## Closure
 
                   Une fonction capture le scope parent !
@@ -208,7 +244,7 @@
                   ```
 
 
-                  <!-- .slide: data-background="#ff9eef" -->
+                  <!-- .slide: data-background="#D8C99B" -->
                   ## This
 
                   le mot clé this fait référence à un scope, mais lequel ?
@@ -217,19 +253,19 @@
                   function () {
                       function foo() { console.log(this); }
 
-                      foo();                          // this = scope appelant
-                      new foo();                      // this = instance de la classe
+                      foo();            // this = scope appelant
+                      new foo();        // this = instance de la classe
                       var object = { bar: foo };
-                      object.bar();                   // this = object
-                      foo.call(object);               // this = object
+                      object.bar();     // this = object
+                      foo.call(object); // this = object
                   }
                   ```
 
 
-                  <!-- .slide: data-background="#ff9eef" -->
+                  <!-- .slide: data-background="#D8C99B" -->
                   ## Prototype
 
-                  Le JS n'est pas un langage Objet, même si tout est objet
+                  Le JS n'est pas un langage Objet<br>
                   Le JS est un langage prototypé
 
                   ```javascript
@@ -250,18 +286,46 @@
                   http://blog.xebia.fr/2013/06/10/javascript-retour-aux-bases-constructeur-prototype-et-heritage/
 
 
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Astuces
+
+                  ```javascript
+                  var unObjet;
+
+                  var defaultValue = unObjet || {};
+
+                  // protection contre l'accès d'une propriété text d'un object undefined
+                  var text = defaultValue.data && defaultValue.data.text;
+                  ```
+
+
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Astuces - Callback
+
+                  ```javascript
+                  function sayHelloLaterMayBe(callback) {
+                    setTimeout(function() {
+                      if(Math.random() < 0.5) {
+                        return cb && cb(null, 'hello');
+                      }
+                      return cb(new Error('Tu t\'es pris un vent !!'));
+                    }, 500);
+                  }
+                  sayHelloLaterMayBe(function (err, resultat) {
+                    if(err) {
+                      throw err;
+                    }
+                    console.log(resultat);
+                  });
+                  ```
+
+
 
                   <!-- .slide: data-background="#00a6ff" -->
-                  ## Le JS à la papa (ES Next)
+                  ## ES6 / ES2015
 
-                  - `Let` et `Const`
-                  - Arrow function
-                  - Classes
-                  - Promises
-                  - Generators
-                  - Modules
-                  - Autres nouveautés ES6-7
-                  - La suite
+                  - Tout sur l'ES6 !!!
+                  - TOUT !
 
 
                   <!-- .slide: data-background="#00a6ff" -->
@@ -321,7 +385,24 @@
                   }
                   ```
 
-                  Une manière d'avoir des fonction sans perdre le `this` !
+
+                  <!-- .slide: data-background="#00a6ff" -->
+                  ## Arrow function
+
+                  ```javascript
+                  function () {
+                      this.test = [1, 2, 4, 5];
+                      this.multiple = 2;
+
+                      let firstWay = this.test.map((value) => {
+                          return value * this.multiple;
+                      });
+
+                      const secondWay = this.test.map(x => x * this.multiple);
+                  }
+                  ```
+
+                  Des fonctions que ne crées pas de `this` !
 
 
                   <!-- .slide: data-background="#00a6ff" -->
@@ -425,60 +506,6 @@
 
 
                   <!-- .slide: data-background="#00a6ff" -->
-                  #### Autres nouveautés ES6-7
-
-                  - Objets Littéraux
-                  - Templates Literals
-                  - Destructuring
-                  - Opérateur Rest et spread
-                  - Symbols
-                  - Iteratérables
-                  - Boucles for...of
-                  - Defaults values
-                  - Map / WeakMap | Set / WeakSet
-                  - Opérateur de puissance
-                  - Proxy function
-                  - Nouvelles fonctions utilitaires
-
-
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## La suite
-
-                  - D'autres fonctions utilitaires
-                  - Nouvelle API de calcul bas niveau
-                  - Async function
-
-
-
-                  # Pratiquons !
-
-                  - [Code Combat](https://codecombat.com)
-                  - [Coding Game](https://www.codingame.com)
-                  - [NodeSchool](http://nodeschool.io/)
-                  - [plunker](https://plnkr.co/)
-                  - [jsfiddle](https://jsfiddle.net/)
-
-                  - [**ES6 katas**](http://es6katas.org/)
-
-
-
-                  <!-- .slide: data-background="rgb(255, 175, 70)" -->
-                  ## Ce que nous n'avons pas vu
-
-                  - Objets Littéraux
-                  - Templates Literals
-                  - Destructuring
-                  - Opérateur Rest et spread
-                  - Symbols
-                  - Iteratérables
-                  - Boucles for...of
-                  - Defaults values
-                  - Map / WeakMap | Set / WeakSet
-                  - Opérateur de puissance
-                  - Proxy function
-
-
-                  <!-- .slide: data-background="rgb(255, 175, 70)" -->
                   ## Templates Literals
 
                   ```javascript
@@ -495,7 +522,7 @@
                   ```
 
 
-                  <!-- .slide: data-background="rgb(255, 175, 70)" -->
+                  <!-- .slide: data-background="#00a6ff" -->
                   ## Destructuring
 
                   ```javascript
@@ -507,7 +534,7 @@
                   ```
 
 
-                  <!-- .slide: data-background="rgb(255, 175, 70)" -->
+                  <!-- .slide: data-background="#00a6ff" -->
                   ## Opérateur ... (Rest et spread)
 
                   ```javascript
@@ -530,7 +557,7 @@
                   ```
 
 
-                  <!-- .slide: data-background="rgb(255, 175, 70)" -->
+                  <!-- .slide: data-background="#00a6ff" -->
                   ## Symbols
 
                   ```javascript
@@ -541,7 +568,7 @@
                   Les `symbol` sont itérable
 
 
-                  <!-- .slide: data-background="rgb(255, 175, 70)" -->
+                  <!-- .slide: data-background="#00a6ff" -->
                   ## Iteratérables
 
                   Les itérables implémente la fonction `[Symbol.iterator]`
@@ -565,7 +592,7 @@
                   ```
 
 
-                  <!-- .slide: data-background="rgb(255, 175, 70)" -->
+                  <!-- .slide: data-background="#00a6ff" -->
                   ## Boucles for...of
 
                   ```javascript
@@ -575,7 +602,7 @@
                   ```
 
 
-                  <!-- .slide: data-background="rgb(255, 175, 70)" -->
+                  <!-- .slide: data-background="#00a6ff" -->
                   ## Defaults values
 
                   ```javascript
@@ -590,7 +617,7 @@
                   ```
 
 
-                  <!-- .slide: data-background="rgb(255, 175, 70)" -->
+                  <!-- .slide: data-background="#00a6ff" -->
                   ## Map | Set
 
                   ```javascript
@@ -613,7 +640,7 @@
                   Ils sont itérables !
 
 
-                  <!-- .slide: data-background="rgb(255, 175, 70)" -->
+                  <!-- .slide: data-background="#00a6ff" -->
                   ## WeakMap | WeakSet
 
                   Identique aux Map | Set mais :
@@ -626,7 +653,7 @@
                   ```
 
 
-                  <!-- .slide: data-background="rgb(255, 175, 70)" -->
+                  <!-- .slide: data-background="#00a6ff" -->
                   ## Opérateur de puissance
 
                   ```javascript
@@ -640,7 +667,7 @@
                   ```
 
 
-                  <!-- .slide: data-background="rgb(255, 175, 70)" -->
+                  <!-- .slide: data-background="#00a6ff" -->
                   ## Proxy function
 
                   Intercepte les opérations sur les objets
@@ -666,7 +693,7 @@
 
 
                   <!-- .slide: data-background="#59d0ffcc" -->
-                  ## Bonus 2 - ES2017
+                  ## ES2017
 
                   - Async function
                   - SIMD API
@@ -721,7 +748,7 @@
 
 
                   <!-- .slide: data-background="#59d0ffcc" -->
-                  ## Bonus 3 - ES2018
+                  ## ES2018
 
                   - Global
                   - ES Modules !!
@@ -729,6 +756,21 @@
                   - Promise.prototype.finnaly
                   - BigInt
                   - Class field
+
+
+
+                  # Pratiquons !
+
+                  - [Code Combat](https://codecombat.com)
+                  - [Coding Game](https://www.codingame.com)
+                  - [NodeSchool](http://nodeschool.io/)
+                  - [plunker](https://plnkr.co/)
+                  - [jsfiddle](https://jsfiddle.net/)
+
+                  - [**ES6 katas**](http://es6katas.org/)
+
+                  - [Code kata](http://codekata.com/)
+                  - [Coding Dojo](http://codingdojo.org/kata/)
                 </script>
             </section>
         </div>
