@@ -364,6 +364,20 @@
 
 
                   <!-- .slide: data-background="#00a6ff" -->
+                  ## `const`
+
+                  Les items des tableaux et les objets peuvent être changés
+
+                  ```javascript
+                  const a = [4];
+                  a[0]= 5; // 5
+                  
+                  const a = {c:4};
+                  a.c= 6;// 6
+                  ```
+
+
+                  <!-- .slide: data-background="#00a6ff" -->
                   ## Bye bye les `var`
 
                   ![](http://gif.co/o4Yb.gif)
@@ -382,6 +396,7 @@
                       });
 
                       const secondWay = this.test.map(x => x * this.multiple);
+                      const returnObject = (params) => ({x:10});
                   }
                   ```
 
@@ -399,6 +414,7 @@
                       });
 
                       const secondWay = this.test.map(x => x * this.multiple);
+                      const returnObject = (params) => ({x:10});
                   }
                   ```
 
