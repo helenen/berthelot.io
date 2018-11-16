@@ -441,6 +441,19 @@
 
 
                   <!-- .slide: data-background="#00a6ff" -->
+                  ## Classes
+                  ```javascript
+                 let expr = "zenika";
+
+                 let obj = {
+                 get [expr]() { return "Flo"; }
+                 };
+
+                 console.log(obj.zenika); // "Flo"
+                 ```
+
+
+                  <!-- .slide: data-background="#00a6ff" -->
                   ## Ce n'est que du sucre !
 
                   ![](http://gif.co/urQJ.gif)
@@ -481,6 +494,50 @@
                   ```
 
 
+                  <!-- .slide: data-background="#00a6ff" -->
+                  ## Promises
+                  ```javascript
+                  class MyPromise extends Promise {}
+
+                  const promise = new MyPromise((resolve) => resolve());
+                  ````
+
+                  
+                  <!-- .slide: data-background="#00a6ff" -->
+                  ## Promises
+                  ```javascript
+                  
+                  const p1 = new Promise((resolve, reject) => { 
+                    resolve('un'); 
+                  }); 
+                  const p2 = new Promise((resolve, reject) => { 
+                    resolve('deux'); 
+                  });
+                   Promise.all([p1, p2]).then(values => { 
+                    console.log(values);//[ 'un', 'deux' ]
+                  }).catch(reason => { 
+                    console.log(reason)
+                  });
+                  ```
+
+
+                  <!-- .slide: data-background="#00a6ff" -->
+                  ## Promises
+                  ```javascript
+                  var p1 = new Promise(function(resolve, reject) { 
+                    setTimeout(resolve, 100, "trois");
+                     });
+                  var p2 = new Promise(function(resolve, reject) { 
+                    setTimeout(reject, 500, "quatre"); 
+                    });
+                
+                  Promise.race([p1, p2]).then(function(value) {
+                    console.log(value);
+                   });
+
+                  ```
+
+                  
                   <!-- .slide: data-background="#00a6ff" -->
                   ## Generator
 
