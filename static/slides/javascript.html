@@ -60,8 +60,8 @@
                   <!-- .slide: data-background="#D8C99B" -->
                   ## Les racines du JS, ES5
 
-                  - Types
                   - Variables
+                  - Types
                   - Fonctions
                   - Assertions
                   - Scopes
@@ -71,11 +71,26 @@
 
 
                   <!-- .slide: data-background="#D8C99B" -->
-                  ## Types
+                  ## Variables
 
-                  JavaScript est un langage faiblement typé<br>
-                  le typage est induit !
                   ```javascript
+                    var maVariable; 
+
+                    var unNombre = 1;
+                    var chaineDeCaractere = 'toto'; /* doubleQuote ça marche aussi */
+                    var booleen = true;
+                    maVariable = null;
+                    maVariable = uneFonction;
+                    maVariable = unNombre;
+                  ```
+
+
+                    <!-- .slide: data-background="#D8C99B" -->
+                    ## Types
+
+                    JavaScript est un langage faiblement typé<br>
+                    le typage est induit !
+                    ```javascript
                     // Un commentaire
 
                     // types prémitifs
@@ -88,25 +103,41 @@
                     // types par références
                     [1, true, 'une string', {}]; // array
                     {cle: 1}; // object
-                  ```
+                    ```
 
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ## Variables
+                    <!-- .slide: data-background="#D8C99B" -->
+                   ## Type primitif
 
-                  ```javascript
-                    var maVariable; // undefined
+                   ```javascript
+                   var a = 10;
 
-                    var unNombre = 1;
-                    var chaineDeCaractere = 'toto'; /* doubleQuote ça marche aussi */
-                    var booleen = true;
-                    maVariable = null;
-                    maVariable = uneFonction;
-                    maVariable = unNombre;
-                  ```
+                   var b = a ;
+
+                   b = 20;
+
+                   console.log(a); //10
+                   console.log(b);//20
+                   ```
 
 
-                  <!-- .slide: data-background="#D8C99B" -->
+                     <!-- .slide: data-background="#D8C99B" -->
+                    ## Type par référence
+
+                     ```javascript
+                     var x = {name: 'John'};
+  
+                     var y = x ;
+  
+                     y.name = 'David';
+  
+                     console.log(x.name); //'David'
+                     
+                     ```
+  
+
+
+                   <!-- .slide: data-background="#D8C99B" -->
                   ## Les fonctions
 
                   ```javascript
