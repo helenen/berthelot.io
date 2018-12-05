@@ -1,915 +1,932 @@
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Javascript - Florent Berthelot</title>
-    <meta name="description" content="La presentation qui présente l'ensemble des nouveautées javascript et repose les bases du langage">
+    <meta
+      name="description"
+      content="La presentation qui présente l'ensemble des nouveautées javascript et repose les bases du langage"
+    />
 
-    <link rel="stylesheet" href="/reveal/css/reveal.css">
-    <link rel="stylesheet" href="/reveal/css/theme/white.css">
-    <link rel="stylesheet" href="/reveal/lib/css/zenburn.css">
-    <link rel="stylesheet" href="/slides/styles/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/reveal/css/reveal.css" />
+    <link rel="stylesheet" href="/reveal/css/theme/white.css" />
+    <link rel="stylesheet" href="/reveal/lib/css/zenburn.css" />
+    <link rel="stylesheet" href="/slides/styles/style.css" />
+  </head>
+  <body>
     <div class="reveal">
-        <div class="slides">
-            <section
-                    data-markdown
-                    data-separator="^\n\n\n"
-                    data-separator-vertical="^\n\n"
-                    data-separator-notes="^Notes:"
-                    data-charset="UTF-8">
-                <script type="text/template">
-                  <!-- .slide: data-background="#ff9900" -->
-                  # Le Javascript
+      <div class="slides">
+        <section
+          data-markdown
+          data-separator="^\n\n\n"
+          data-separator-vertical="^\n\n"
+          data-separator-notes="^Notes:"
+          data-charset="UTF-8"
+        >
+          <script type="text/template">
+             <!-- .slide: data-background="#ff9900" -->
+             # Le Javascript
 
 
 
-                  <!-- .slide: data-background="#0af" -->
-                  ## Programme
+             <!-- .slide: data-background="#0af" -->
+             ## Programme
 
-                  - Historique
-                  - Les racines du JS, ES5
-                  - ES6 / ES2015
-                  - ES2016
-                  - ES2017
-                  - ES2018
-                  - Et la suite ?
+             - Historique
+             - Les racines du JS, ES5
+             - ES6 / ES2015
+             - ES2016
+             - ES2017
+             - ES2018
+             - Et la suite ?
 
-                  - Pratiquons !
+             - Pratiquons !
 
 
 
-                  <!-- .slide: data-background="#273E47" -->
-                  ## Historique
+             <!-- .slide: data-background="#273E47" -->
+             ## Historique
 
-                  - Au début : WWW était du print
-                  - 1995: Java (Sun), **JS** créé par Brendan Eich (Netscape)
-                  - IE4 fait gagner la guerre des navigateurs
-                  - 2004: Mozaic Godzilla => **Mozila**
-                  - 2008: **Chrome** : JavaScript enfin performant !
-                  - 2009: ES5, Chrome et **Node.JS**
-                  - Puis en 2015 => **ES6** !
+             - Au début : WWW était du print
+             - 1995: Java (Sun), **JS** créé par Brendan Eich (Netscape)
+             - IE4 fait gagner la guerre des navigateurs
+             - 2004: Mozaic Godzilla => **Mozila**
+             - 2008: **Chrome** : JavaScript enfin performant !
+             - 2009: ES5, Chrome et **Node.JS**
+             - Puis en 2015 => **ES6** !
 
-                  Notes:
-                  JS anciennement appelé LiveScript
-                  Netscape a remplacé appelé NCSA Mosaic
-                  A la mort de netscape JS passé à ECMA international
+             Notes:
+             JS anciennement appelé LiveScript
+             Netscape a remplacé appelé NCSA Mosaic
+             A la mort de netscape JS passé à ECMA international
 
 
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ## Les racines du JS, ES5
+             <!-- .slide: data-background="#D8C99B" -->
+             ## Les racines du JS, ES5
 
-                  - Variables
-                  - Types
-                  - Fonctions
-                  - Assertions
-                  - Scopes
-                  - closures
-                  - This
-                  - Prototypes
+             - Instruction & commentaires
+             - Variable & Assignation
+             - Types
+             - Fonctions
+             - Assertions
+             - Scopes
+             - closures
+             - This
+             - Prototypes
 
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ## Variable
+             <!-- .slide: data-background="#D8C99B" -->
+             ## Instruction & commentaires
 
-                  ```javascript
-                    // Un commentaire
-                    /* Un commentaire */
-                    var maVariable; // le ; indique la fin d'une instruction
-                  ```
+             ```javascript
+               // Un commentaire
+               /* Un commentaire */
+               var maVariable; // le ; indique la fin d'une instruction
+             ```
 
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ## Types
+             <!-- .slide: data-background="#D8C99B" -->
+             ## Variable & Assignation
 
-                  ```javascript
-                  // types prémitifs
-                  undefined;
-                  null;
-                  true; // booleen
-                  1; // number
-                  'toto'; // string
+             ```javascript
+             var uneChaineDeCaractere = 'Hello zenika';
 
-                  // types par références
-                  [1, true, 'une string', {}]; // array
-                  {cle: 1}; // object
-                  ```
+             ```
 
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ## Types
+             <!-- .slide: data-background="#D8C99B" -->
+             ## Types
 
-                  ```javascript
-                  var unNombre: number = 1;
-                  var unBooleen: boolean = true;
-                  var uneVariable: null = null;
-                  var uneChaineDeCaractere: string = 'toto';
+             ```javascript
+             // types prémitifs
+             undefined;
+             null;
+             true; // booleen
+             1; // number
+             'toto'; // string
 
-                  var unTableau: [] = [1, true, 'une string', {}];
-                  var unObjet: obj = {cle: 1};
+             // types par références
+             [1, true, 'une string', {}]; // array
+             {cle: 1}; // object
 
-                  ```
+             ```
 
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                    ## Types
-                    JavaScript est un langage faiblement typé
+              <!-- .slide: data-background="#D8C99B" -->
+               ## Types
+               JavaScript est un langage faiblement typé
 
-                    le typage est induit !
-                    ```javascript
-                    // types prémitifs
-                    var unNombre = 1; 
-                    var chaineDeCaractere = 'toto'; /* doubleQuote ça marche aussi */
-                    var booleen = true; 
-                    maVariable = null;
-                    maVariable = uneFonction;
-                    maVariable = unNombre;
-                    
+                ```javascript
+                var unNombre: number = 1;
+                var unBooleen: boolean = true;
+                var uneVariable: null = null;
+                var uneChaineDeCaractere: string = 'toto';
 
-                    // types par références
-                    [1, true, 'une string', {}]; // array
-                    {cle: 1}; // object
-                    ```
+                var unTableau: [] = [1, true, 'une string', {}];
+                var unObjet: obj = {cle: 1};
 
+                ```
 
-                    <!-- .slide: data-background="#D8C99B" -->
-                   ## Type primitif
 
-                   ```javascript
-                   var a = 10;
+                <!-- .slide: data-background="#D8C99B" -->
+                ## Types
+               JavaScript est un langage faiblement typé
 
-                   var b = a ;
+               le typage est induit !
 
-                   b = 20;
+               ```javascript
+               // types prémitifs
+               var unNombre = 1;
+               var chaineDeCaractere = 'toto'; /* doubleQuote ça marche aussi */
+               var booleen = true;
+               maVariable = null;
+               maVariable = uneFonction;
+               maVariable = unNombre;
 
-                   console.log(a); //10
-                   console.log(b);//20
-                   ```
+               // types par références
+               [1, true, 'une string', {}]; // array
+               {cle: 1}; // object
+               ```
 
 
-                     <!-- .slide: data-background="#D8C99B" -->
-                    ## Type par référence
+               <!-- .slide: data-background="#D8C99B" -->
+              ## Type primitif
 
-                     ```javascript
-                     var x = {name: 'John'};
-  
-                     var y = x ;
-  
-                     y.name = 'David';
-  
-                     console.log(x.name); //'David'
-                     
-                     ```
-  
+              ```javascript
+              var a = 10;
 
+              var b = a ;
 
-                   <!-- .slide: data-background="#D8C99B" -->
-                  ## Les fonctions
+              b = 20;
 
-                  ```javascript
-                  // fonction nommée
-                  function multiplication (param1, param2) {
-                    return param1 * param2;
-                  }
+              console.log(a); //10
+              console.log(b);//20
+              ```
 
-                  multiplication(2, 2); // retourne 4
 
-                  // Une fonction est un objet
-                  console.log(multiplication.name); // 'multiplication'
+                <!-- .slide: data-background="#D8C99B" -->
+               ## Type par référence
 
-                  // Fonction anonyme
-                  var multiplication = function () { /*...*/ }
-                  ```
+                ```javascript
+                var x = {name: 'John'};
 
+                var y = x ;
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ## Assertions
+                y.name = 'David';
 
-                  ```javascript
-                  '1' == 1; // true
-                  true == '1'; // true
-                  true == 1; // true
-                  ```
+                console.log(x.name); //'David'
 
-                  ** Coercition du type ! **
+                ```
 
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ![WTF!](http://gif.co/rHOV.gif)
+              <!-- .slide: data-background="#D8C99B" -->
+             ## Les fonctions
 
+             ```javascript
+             // fonction nommée
+             function multiplication (param1, param2) {
+               return param1 * param2;
+             }
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ## Assertions
+             multiplication(2, 2); // retourne 4
 
-                  Toujours utiliser un triple égale<br>
-                  pour ne par convertir le type
+             // Une fonction est un objet
+             console.log(multiplication.name); // 'multiplication'
 
-                  ```javascript
-                    1 === 1; // true
-                    true !== false; // true
+             // Fonction anonyme
+             var multiplication = function () { /*...*/ }
+             ```
 
-                    1 > 2; // false
-                    1 >= 2;// false
-                    1 < 2; // true
-                    1 <= 2;// true
 
-                    true && false; // false
-                    true || false; // true
-                  ```
+             <!-- .slide: data-background="#D8C99B" -->
+             ## Assertions
 
+             ```javascript
+             '1' == 1; // true
+             true == '1'; // true
+             true == 1; // true
+             ```
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ## Block conditionel
+             ** Coercition du type ! **
 
-                  ```Javascript
-                  var variable1 = true;
-                  var variable2 = false;
 
-                  if (variable1 || variable2) {
-                     console.log('ça passe');
-                  }
-                  else if (variable1 && variable2) {
-                     console.log(('ça passe pas x2');
-                  }
-                  var variable = null || 'toto'; // 'toto'
-                  ```
+             <!-- .slide: data-background="#D8C99B" -->
+             ![WTF!](http://gif.co/rHOV.gif)
 
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ## Boucles
+             <!-- .slide: data-background="#D8C99B" -->
+             ## Assertions
 
-                  Du classique : `for` et `while`
+             Toujours utiliser un triple égale<br>
+             pour ne par convertir le type
 
-                  ```javascript
-                  var it = 0;
-                  while (it < 10) {
-                    it++;
-                  }
+             ```javascript
+               1 === 1; // true
+               true !== false; // true
 
-                  do {
-                    it++;
-                  } while(it < 10)
+               1 > 2; // false
+               1 >= 2;// false
+               1 < 2; // true
+               1 <= 2;// true
 
-                  for (var i = 0; i < 10; i++;) {}
+               true && false; // false
+               true || false; // true
+             ```
 
-                  for (var i in [1, 'a', 3, '5']) {
-                     console.log(i); // 0, puis 1, puis 2, puis 3
-                  }
-                  ```
 
+             <!-- .slide: data-background="#D8C99B" -->
+             ## Block conditionel
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ## Scope
-                  Scope = portée d'un symbole
+             ```Javascript
+             var variable1 = true;
+             var variable2 = false;
 
-                  Scope d'une variable = fonction
+             if (variable1 || variable2) {
+                console.log('ça passe');
+             }
+             else if (variable1 && variable2) {
+                console.log(('ça passe pas x2');
+             }
+             var variable = null || 'toto'; // 'toto'
+             ```
 
-                  ```javascript
-                  function scope () {
-                    var answer1 = foo();
 
-                    function foo () { return 42; }
+             <!-- .slide: data-background="#D8C99B" -->
+             ## Boucles
 
-                    var answer2 = foo();
+             Du classique : `for` et `while`
 
-                    if (true) {
-                      var banana = 'banana';
-                    }
-                    console.log(banana); // 'banana';
-                  }
-                  ```
-                  Notes: On peux déclarer les fonctions dans n'importe quel ordre
+             ```javascript
+             var it = 0;
+             while (it < 10) {
+               it++;
+             }
 
+             do {
+               it++;
+             } while(it < 10)
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ## Closure
+             for (var i = 0; i < 10; i++;) {}
 
-                  Une fonction capture le scope parent !
+             for (var i in [1, 'a', 3, '5']) {
+                console.log(i); // 0, puis 1, puis 2, puis 3
+             }
+             ```
 
-                  ```javascript
-                  var bar = 'hellow';
 
-                  function foo () {
-                      console.log(bar);
-                  }
+             <!-- .slide: data-background="#D8C99B" -->
+             ## Scope
+             Scope = portée d'un symbole
 
-                  foo();    // 'hello'
+             Scope d'une variable = fonction
 
-                  bar = 'world';
+             ```javascript
+             function scope () {
+               var answer1 = foo();
 
-                  foo();   // 'world'
-                  ```
+               function foo () { return 42; }
 
+               var answer2 = foo();
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ## This
+               if (true) {
+                 var banana = 'banana';
+               }
+               console.log(banana); // 'banana';
+             }
+             ```
+             Notes: On peux déclarer les fonctions dans n'importe quel ordre
 
-                  le mot clé this fait référence à un scope, mais lequel ?
 
-                  ```javascript
-                  function () {
-                      function foo() { console.log(this); }
+             <!-- .slide: data-background="#D8C99B" -->
+             ## Closure
 
-                      foo();            // this = scope appelant
-                      new foo();        // this = instance de la classe
-                      var object = { bar: foo };
-                      object.bar();     // this = object
-                      foo.call(object); // this = object
-                  }
-                  ```
+             Une fonction capture le scope parent !
 
+             ```javascript
+             var bar = 'hellow';
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ## Prototype
+             function foo () {
+                 console.log(bar);
+             }
 
-                  Le JS n'est pas un langage Objet<br>
-                  Le JS est un langage prototypé
+             foo();    // 'hello'
 
-                  ```javascript
-                  function chien () {
-                   this.crie = function () {
-                    console.log('miaou');
-                   }
-                  }
-                  ```
-                  ```javascript
-                  function chien () { }
-                  chien.prototype.crie = function () {
-                    console.log('miaou');
-                  };
-                  ```
+             bar = 'world';
 
-                  Notes: Le prototype d'un objet est utilisé pour fournir de façon dynamique des propriétés aux objets qui héritent du prototype
-                  http://blog.xebia.fr/2013/06/10/javascript-retour-aux-bases-constructeur-prototype-et-heritage/
+             foo();   // 'world'
+             ```
 
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ## Astuces
+             <!-- .slide: data-background="#D8C99B" -->
+             ## This
 
-                  ```javascript
-                  var unObjet;
+             le mot clé this fait référence à un scope, mais lequel ?
 
-                  var defaultValue = unObjet || {};
+             ```javascript
+             function () {
+                 function foo() { console.log(this); }
 
-                  // protection contre l'accès d'une propriété text d'un object undefined
-                  var text = defaultValue.data && defaultValue.data.text;
-                  ```
+                 foo();            // this = scope appelant
+                 new foo();        // this = instance de la classe
+                 var object = { bar: foo };
+                 object.bar();     // this = object
+                 foo.call(object); // this = object
+             }
+             ```
 
 
-                  <!-- .slide: data-background="#D8C99B" -->
-                  ## Astuces - Callback
+             <!-- .slide: data-background="#D8C99B" -->
+             ## Prototype
 
-                  ```javascript
-                  function sayHelloLaterMayBe(callback) {
-                    setTimeout(function() {
-                      if(Math.random() < 0.5) {
-                        return cb && cb(null, 'hello');
-                      }
-                      return cb(new Error('Tu t\'es pris un vent !!'));
-                    }, 500);
-                  }
-                  sayHelloLaterMayBe(function (err, resultat) {
-                    if(err) {
-                      throw err;
-                    }
-                    console.log(resultat);
-                  });
-                  ```
+             Le JS n'est pas un langage Objet<br>
+             Le JS est un langage prototypé
 
+             ```javascript
+             function chien () {
+              this.crie = function () {
+               console.log('miaou');
+              }
+             }
+             ```
+             ```javascript
+             function chien () { }
+             chien.prototype.crie = function () {
+               console.log('miaou');
+             };
+             ```
 
+             Notes: Le prototype d'un objet est utilisé pour fournir de façon dynamique des propriétés aux objets qui héritent du prototype
+             http://blog.xebia.fr/2013/06/10/javascript-retour-aux-bases-constructeur-prototype-et-heritage/
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## ES6 / ES2015
 
-                  - Tout sur l'ES6 !!!
-                  - TOUT !
+             <!-- .slide: data-background="#D8C99B" -->
+             ## Astuces
 
+             ```javascript
+             var unObjet;
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Un tas de nouveautés !
+             var defaultValue = unObjet || {};
 
-                  2009 -> 2015 = 6 ans de nouveauté d'un coup !
+             // protection contre l'accès d'une propriété text d'un object undefined
+             var text = defaultValue.data && defaultValue.data.text;
+             ```
 
-                  ![](http://gif.co/qswj.gif)
 
+             <!-- .slide: data-background="#D8C99B" -->
+             ## Astuces - Callback
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Des sprints de 1 an
+             ```javascript
+             function sayHelloLaterMayBe(callback) {
+               setTimeout(function() {
+                 if(Math.random() < 0.5) {
+                   return cb && cb(null, 'hello');
+                 }
+                 return cb(new Error('Tu t\'es pris un vent !!'));
+               }, 500);
+             }
+             sayHelloLaterMayBe(function (err, resultat) {
+               if(err) {
+                 throw err;
+               }
+               console.log(resultat);
+             });
+             ```
 
-                  ![](http://gif.co/o70L.gif)
 
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Rétrocompatibilité !
+             <!-- .slide: data-background="#00a6ff" -->
+             ## ES6 / ES2015
 
-                  ![](/illustrations/Javascript.png)
+             - Tout sur l'ES6 !!!
+             - TOUT !
 
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## `let` et `const`
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Un tas de nouveautés !
 
-                  Des variables et constantes bien scopé !
+             2009 -> 2015 = 6 ans de nouveauté d'un coup !
 
-                  ```javascript
-                  for (let i in [1, 0, 4]) {
-                      const test = 'une constante';
-                      test = 'une autre valeur'; // KO
-                  }
+             ![](http://gif.co/qswj.gif)
 
-                  console.log(i); // undefined
-                  ```
 
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Des sprints de 1 an
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## `const`
+             ![](http://gif.co/o70L.gif)
 
-                  Les items des tableaux et les objets peuvent être changés
 
-                  ```javascript
-                  const a = [4];
-                  a[0]= 5; // 5
-                  
-                  const a = {c:4};
-                  a.c= 6;// 6 
-                  ```
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Rétrocompatibilité !
 
+             ![](/illustrations/Javascript.png)
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Bye bye les `var`
 
-                  ![](http://gif.co/o4Yb.gif)
+             <!-- .slide: data-background="#00a6ff" -->
+             ## `let` et `const`
 
+             Des variables et constantes bien scopé !
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Arrow function
+             ```javascript
+             for (let i in [1, 0, 4]) {
+                 const test = 'une constante';
+                 test = 'une autre valeur'; // KO
+             }
 
-                  ```javascript
-                  function () {
-                      this.test = [1, 2, 4, 5];
-                      this.multiple = 2;
+             console.log(i); // undefined
+             ```
 
-                      let firstWay = this.test.map((value) => {
-                          return value * this.multiple;
-                      });
 
-                      const secondWay = this.test.map(x => x * this.multiple);
-                      const returnObject = (params) => ({x:10});
-                  }
-                  ```
+             <!-- .slide: data-background="#00a6ff" -->
+             ## `const`
 
+             Les items des tableaux et les objets peuvent être changés
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Arrow function
+             ```javascript
+             const a = [4];
+             a[0]= 5; // 5
 
-                  ```javascript
-                  function () {
-                      this.test = [1, 2, 4, 5];
-                      this.multiple = 2;
+             const a = {c:4};
+             a.c= 6;// 6
+             ```
 
-                      let firstWay = this.test.map((value) => {
-                          return value * this.multiple;
-                      });
 
-                      const secondWay = this.test.map(x => x * this.multiple);
-                      const returnObject = (params) => ({x:10});
-                  }
-                  ```
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Bye bye les `var`
 
-                  Des fonctions que ne crées pas de `this` !
+             ![](http://gif.co/o4Yb.gif)
 
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Classes
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Arrow function
 
-                  ```javascript
-                  class chien extends animal {
-                      constructor () {
-                        super();
-                      }
+             ```javascript
+             function () {
+                 this.test = [1, 2, 4, 5];
+                 this.multiple = 2;
 
-                      uneMethode () {
-                         return 42;
-                      }
+                 let firstWay = this.test.map((value) => {
+                     return value * this.multiple;
+                 });
 
-                      uneMethodeDuParent() { super.bien(); }
-                      static uneMethodeStatic() { return 43; }
-                  }
-                  ```
+                 const secondWay = this.test.map(x => x * this.multiple);
+                 const returnObject = (params) => ({x:10});
+             }
+             ```
 
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Classes
-                  ```javascript
-                 let expr = "zenika";
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Arrow function
 
-                 let obj = {
-                 get [expr]() { return "Flo"; }
-                 };
+             ```javascript
+             function () {
+                 this.test = [1, 2, 4, 5];
+                 this.multiple = 2;
 
-                 console.log(obj.zenika); // "Flo"
-                 ```
+                 let firstWay = this.test.map((value) => {
+                     return value * this.multiple;
+                 });
 
+                 const secondWay = this.test.map(x => x * this.multiple);
+                 const returnObject = (params) => ({x:10});
+             }
+             ```
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Ce n'est que du sucre !
+             Des fonctions que ne crées pas de `this` !
 
-                  ![](http://gif.co/urQJ.gif)
 
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Classes
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Promises
+             ```javascript
+             class chien extends animal {
+                 constructor () {
+                   super();
+                 }
 
-                  ```javascript
-                  anAsyncCall()
-                      .then((data) => {
-                          return data.userId;
-                      })
-                      .then((userId) => anotherAsyncCall(userId) )
-                      .then((dataOfSecondCall) => {
-                          console.log('yolo je chaine les promesses', dataOfSecondCall);
-                      })
-                      .catch((err) => {
-                          console.error(err);
-                      });
-                  ```
+                 uneMethode () {
+                    return 42;
+                 }
 
+                 uneMethodeDuParent() { super.bien(); }
+                 static uneMethodeStatic() { return 43; }
+             }
+             ```
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Promises
 
-                  ```javascript
-                  function anAsyncCall() {
-                      return new Promise(function (resolve, reject) {
-                          setTimeout(() => {
-                              if (Math.random() > 0.5) {
-                                  reject(new Error('L\'aléatoire ne vous aime pas !');
-                              }
-                              resolve(42);
-                          }, 500);
-                      });
-                  }
-                  ```
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Classes
+             ```javascript
+            let expr = "zenika";
 
+            let obj = {
+            get [expr]() { return "Flo"; }
+            };
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Promises
-                  ```javascript
-                  class MyPromise extends Promise {}
+            console.log(obj.zenika); // "Flo"
+            ```
 
-                  const promise = new MyPromise((resolve) => resolve());
-                  ```
 
-                  
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Promises
-                  ```javascript
-                  
-                  const p1 = new Promise((resolve, reject) => { 
-                    resolve('un'); 
-                  }); 
-                  const p2 = new Promise((resolve, reject) => { 
-                    resolve('deux'); 
-                  });
-                   Promise.all([p1, p2]).then(values => { 
-                    console.log(values);//[ 'un', 'deux' ]
-                  }).catch(reason => { 
-                    console.log(reason)
-                  });
-                  ```
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Ce n'est que du sucre !
 
+             ![](http://gif.co/urQJ.gif)
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Promises
-                  ```javascript
-                  var p1 = new Promise(function(resolve, reject) { 
-                    setTimeout(resolve, 100, "trois");
-                     });
-                  var p2 = new Promise(function(resolve, reject) { 
-                    setTimeout(reject, 500, "quatre"); 
-                    });
-                
-                  Promise.race([p1, p2]).then(function(value) {
-                    console.log(value);// trois
-                   });
 
-                  ```
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Promises
 
+             ```javascript
+             anAsyncCall()
+                 .then((data) => {
+                     return data.userId;
+                 })
+                 .then((userId) => anotherAsyncCall(userId) )
+                 .then((dataOfSecondCall) => {
+                     console.log('yolo je chaine les promesses', dataOfSecondCall);
+                 })
+                 .catch((err) => {
+                     console.error(err);
+                 });
+             ```
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Generator
 
-                  ```javascript
-                  function *countTo3() {
-                        yield 1;
-                        yield 2;
-                        yield 3;
-                        return 42;
-                  }
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Promises
 
-                  let iterator = countTo3();
+             ```javascript
+             function anAsyncCall() {
+                 return new Promise(function (resolve, reject) {
+                     setTimeout(() => {
+                         if (Math.random() > 0.5) {
+                             reject(new Error('L\'aléatoire ne vous aime pas !');
+                         }
+                         resolve(42);
+                     }, 500);
+                 });
+             }
+             ```
 
-                  console.log(iterator.next()); // { value: 1, done: false }
-                  console.log(iterator.next()); // { value: 2, done: false }
-                  console.log(iterator.next()); // { value: 3, done: false }
-                  console.log(iterator.next()); // { value: 42, done: true }
-                  ```
 
-                  Notes: La puissances des coroutines !!
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Promises
+             ```javascript
+             class MyPromise extends Promise {}
 
+             const promise = new MyPromise((resolve) => resolve());
+             ```
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Modules
 
-                  Module A
-                  ```javascript
-                  export let name = 1;
-                  ```
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Promises
+             ```javascript
 
-                  Module B
-                  ```javascript
-                  import {name} from 'moduleA';
+             const p1 = new Promise((resolve, reject) => {
+               resolve('un');
+             });
+             const p2 = new Promise((resolve, reject) => {
+               resolve('deux');
+             });
+              Promise.all([p1, p2]).then(values => {
+               console.log(values);//[ 'un', 'deux' ]
+             }).catch(reason => {
+               console.log(reason)
+             });
+             ```
 
-                  console.log(name); // 1
-                  ```
 
-                  Fonctionne avec tous les symboles
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Promises
+             ```javascript
+             var p1 = new Promise(function(resolve, reject) {
+               setTimeout(resolve, 100, "trois");
+                });
+             var p2 = new Promise(function(resolve, reject) {
+               setTimeout(reject, 500, "quatre");
+               });
 
+             Promise.race([p1, p2]).then(function(value) {
+               console.log(value);// trois
+              });
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Templates Literals
+             ```
 
-                  ```javascript
-                  console.log(`Combien font 2 + 2  ? ${2 + 2}`);
-                  // Combien font 2 + 2 ? 4
 
-                  let rang = 'premier';
-                  console.log(`"J'aime bien la personne au ${rang} rang"
-                   ... car elle est assise
-                   et qu'elle me laisse passer des lignes`);
-                  // "J'aime bien la personne au premier rang"
-                  //    ... car elle est assise
-                  //    et qu'elle me laisse passer des lignes
-                  ```
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Generator
 
+             ```javascript
+             function *countTo3() {
+                   yield 1;
+                   yield 2;
+                   yield 3;
+                   return 42;
+             }
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Destructuring
+             let iterator = countTo3();
 
-                  ```javascript
-                  let unTableau = [1, 'paul', 4, 5];
+             console.log(iterator.next()); // { value: 1, done: false }
+             console.log(iterator.next()); // { value: 2, done: false }
+             console.log(iterator.next()); // { value: 3, done: false }
+             console.log(iterator.next()); // { value: 42, done: true }
+             ```
 
-                  let [val1, val2, val3] = unTableau;
+             Notes: La puissances des coroutines !!
 
-                  console.log(val1, val2, val3); // 1, paul, 4
-                  ```
 
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Modules
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Opérateur ... (Rest et spread)
+             Module A
+             ```javascript
+             export let name = 1;
+             ```
 
-                  ```javascript
-                  let unTableau = [1, 'paul', 4, 5];
+             Module B
+             ```javascript
+             import {name} from 'moduleA';
 
-                  let [val1, ...autres] = unTableau;
-                  console.log(val1);   // 1
-                  console.log(autres); // ['paul', 4, 5]
+             console.log(name); // 1
+             ```
 
-                  function uneFonction(arg1, ...autreArgs) {
-                     return autreArgs;
-                  }
+             Fonctionne avec tous les symboles
 
-                  unFonction(1, 2, 3, 4, 5, 6); // [2, 3, 4, 5, 6]
 
-                  function unAutreFonction(x, y, z) {
-                     console.log(x, y , z);
-                  }
-                  unAutreFonction(...unTableau);
-                  ```
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Templates Literals
 
+             ```javascript
+             console.log(`Combien font 2 + 2  ? ${2 + 2}`);
+             // Combien font 2 + 2 ? 4
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Symbols
+             let rang = 'premier';
+             console.log(`"J'aime bien la personne au ${rang} rang"
+              ... car elle est assise
+              et qu'elle me laisse passer des lignes`);
+             // "J'aime bien la personne au premier rang"
+             //    ... car elle est assise
+             //    et qu'elle me laisse passer des lignes
+             ```
 
-                  ```javascript
-                  let symbol = Symbol(); // génére un ID unique
 
-                  Symbol("toto") === Symbol("toto"); // false !
-                  ```
-                  Les `symbol` sont itérable
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Destructuring
 
+             ```javascript
+             let unTableau = [1, 'paul', 4, 5];
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Iteratérables
+             let [val1, val2, val3] = unTableau;
 
-                  Les itérables implémente la fonction `[Symbol.iterator]`
+             console.log(val1, val2, val3); // 1, paul, 4
+             ```
 
-                  ```javascript
-                  let uneChaîne = 'yop';
-                  typeof uneChaîne[Symbol.iterator]  // 'function'
 
-                  iterator.next()  // { value: "y", done: false }
-                  iterator.next()  // { value: "o", done: false }
-                  iterator.next()  // { value: "p", done: false }
-                  iterator.next()  // { value: undefined, done: true }
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Opérateur ... (Rest et spread)
 
-                  let monItérable = {}
-                  monItérable[Symbol.iterator] = function* () {
-                      yield 1;
-                      yield 2;
-                      yield 3;
-                  };
-                  [...myItérable] // [1, 2, 3]
-                  ```
+             ```javascript
+             let unTableau = [1, 'paul', 4, 5];
 
+             let [val1, ...autres] = unTableau;
+             console.log(val1);   // 1
+             console.log(autres); // ['paul', 4, 5]
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Boucles for...of
+             function uneFonction(arg1, ...autreArgs) {
+                return autreArgs;
+             }
 
-                  ```javascript
-                  for (let x of [1, 'x', 3, 45]) {
-                      console.log(x); // 1, puis 'x', puis 3, puis 45
-                  }
-                  ```
+             unFonction(1, 2, 3, 4, 5, 6); // [2, 3, 4, 5, 6]
 
+             function unAutreFonction(x, y, z) {
+                console.log(x, y , z);
+             }
+             unAutreFonction(...unTableau);
+             ```
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Defaults values
 
-                  ```javascript
-                  function uneFonction(param1 = 34, param2 = 'unString') {
-                      console.log(param1, 'et' , param2);
-                  }
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Symbols
 
-                  uneFonction(); // 34 et unString
-                  uneFonction('ben', 'jerry'); // ben et jerry
-                  uneFonction(null, 35); // null et 35
-                  uneFonction(undefined, 35); // 34 et 35
-                  ```
+             ```javascript
+             let symbol = Symbol(); // génére un ID unique
 
+             Symbol("toto") === Symbol("toto"); // false !
+             ```
+             Les `symbol` sont itérable
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Map | Set
 
-                  ```javascript
-                  let uneMap = new Map();
-                  uneMap.set('clé', 'valeur');
-                  uneMap.set(1, 4); // La clé peut être n'importe quoi !
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Iteratérables
 
-                  console.log(unMap.get('clé')); // valeur
-                  console.log(unMap.get(1)); // 4
+             Les itérables implémente la fonction `[Symbol.iterator]`
 
-                  let unSet = new Set();
-                  unSet.set(6);
-                  unSet.set(0);
-                  unSet.set('jeu set et map');
+             ```javascript
+             let uneChaîne = 'yop';
+             typeof uneChaîne[Symbol.iterator]  // 'function'
 
-                  for (let val of unSet.values()) {
-                   console.log(val); // 6 puis 0 puis jeu set et map
-                  }
-                  ```
-                  Ils sont itérables !
+             iterator.next()  // { value: "y", done: false }
+             iterator.next()  // { value: "o", done: false }
+             iterator.next()  // { value: "p", done: false }
+             iterator.next()  // { value: undefined, done: true }
 
+             let monItérable = {}
+             monItérable[Symbol.iterator] = function* () {
+                 yield 1;
+                 yield 2;
+                 yield 3;
+             };
+             [...myItérable] // [1, 2, 3]
+             ```
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## WeakMap | WeakSet
 
-                  Identique aux Map | Set mais :
-                   - ne sont pas itérable
-                   - n'influence pas le grabage collector (les valeurs peuvent disparaitre si les clés disparaissent)
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Boucles for...of
 
-                  ```javascript
-                  let unWeakMap = new WeakMap();
-                  let unWeakSet = new WeakSet();
-                  ```
+             ```javascript
+             for (let x of [1, 'x', 3, 45]) {
+                 console.log(x); // 1, puis 'x', puis 3, puis 45
+             }
+             ```
 
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Opérateur de puissance
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Defaults values
 
-                  ```javascript
-                  let resultat = 2 ** 3;
+             ```javascript
+             function uneFonction(param1 = 34, param2 = 'unString') {
+                 console.log(param1, 'et' , param2);
+             }
 
-                  console.log(resultat); // 8
+             uneFonction(); // 34 et unString
+             uneFonction('ben', 'jerry'); // ben et jerry
+             uneFonction(null, 35); // null et 35
+             uneFonction(undefined, 35); // 34 et 35
+             ```
 
-                  resultat **= 2;
 
-                  console.log(resultat); // 64
-                  ```
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Map | Set
 
+             ```javascript
+             let uneMap = new Map();
+             uneMap.set('clé', 'valeur');
+             uneMap.set(1, 4); // La clé peut être n'importe quoi !
 
-                  <!-- .slide: data-background="#00a6ff" -->
-                  ## Proxy function
+             console.log(unMap.get('clé')); // valeur
+             console.log(unMap.get(1)); // 4
 
-                  Intercepte les opérations sur les objets
+             let unSet = new Set();
+             unSet.set(6);
+             unSet.set(0);
+             unSet.set('jeu set et map');
 
-                  ```javascript
-                  let handler = {
-                      get: function(cible, nom){
-                          return nom === 'd' ? 'pas de gros mots !' : cible[nom];
-                      },
-                      set: function (cible, nom, valeur) {
-                          cible[nom] = valeur || 42;
-                      }
-                  };
+             for (let val of unSet.values()) {
+              console.log(val); // 6 puis 0 puis jeu set et map
+             }
+             ```
+             Ils sont itérables !
 
-                  let p = new Proxy({}, handler);
 
-                  p.c = 36;
-                  p.r = undefined;
+             <!-- .slide: data-background="#00a6ff" -->
+             ## WeakMap | WeakSet
 
-                  console.log(p.c, p.d, p.r); // 36, 'pas de gros mots !', 42
-                  ```
+             Identique aux Map | Set mais :
+              - ne sont pas itérable
+              - n'influence pas le grabage collector (les valeurs peuvent disparaitre si les clés disparaissent)
 
+             ```javascript
+             let unWeakMap = new WeakMap();
+             let unWeakSet = new WeakSet();
+             ```
 
 
-                  <!-- .slide: data-background="#59d0ffcc" -->
-                  ## ES2017
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Opérateur de puissance
 
-                  - Async function
-                  - SIMD API
-                  - 3-4 fonctions utilitaires
-                  - Trailing commas
+             ```javascript
+             let resultat = 2 ** 3;
 
+             console.log(resultat); // 8
 
-                  <!-- .slide: data-background="#59d0ffcc" -->
-                  ## Async / await
+             resultat **= 2;
 
-                  ```javascript
-                  async function maFunction() {
-                      const userInfo = await getUserInfo();
-                      const userID = userInfo.id;
+             console.log(resultat); // 64
+             ```
 
-                      const friendList = await getFriend(userID);
 
-                      console.log('friend list of ', userInfo.name, ':', friendList);
-                  };
-                  ```
-                  En attendant, utilisez les coroutines !
+             <!-- .slide: data-background="#00a6ff" -->
+             ## Proxy function
 
+             Intercepte les opérations sur les objets
 
-                  <!-- .slide: data-background="#59d0ffcc" -->
-                  ## SIMD API
+             ```javascript
+             let handler = {
+                 get: function(cible, nom){
+                     return nom === 'd' ? 'pas de gros mots !' : cible[nom];
+                 },
+                 set: function (cible, nom, valeur) {
+                     cible[nom] = valeur || 42;
+                 }
+             };
 
-                  Sigle Instruction Multiple Data
+             let p = new Proxy({}, handler);
 
-                  Faire plusieurs opérations en une action
-                  ```javascript
-                  const a = new SIMD.Float32x4(1, 2, 3, 4);
-                  const b = new SIMD.Float32x4(5, 6, 7, 8);
-                  const c = SIMD.Float32x4.add(a,b); // float32x4[6,8,10,12]
-                  ```
+             p.c = 36;
+             p.r = undefined;
 
-                  Des pérformances décuplé !
+             console.log(p.c, p.d, p.r); // 36, 'pas de gros mots !', 42
+             ```
 
 
-                  <!-- .slide: data-background="#59d0ffcc" -->
-                  ## Trailing commas
 
-                  ```javascript
-                  const test = {
-                      clef: 2,
-                      clee: 3, // la virgule n'est plus toléré mais dans les specs...
-                  };
-                  ```
-                  Pour du code review avec moins de bruit !
+             <!-- .slide: data-background="#59d0ffcc" -->
+             ## ES2017
 
-                  Perso j'aime pas, trop verbeux...
+             - Async function
+             - SIMD API
+             - 3-4 fonctions utilitaires
+             - Trailing commas
 
 
+             <!-- .slide: data-background="#59d0ffcc" -->
+             ## Async / await
 
-                  <!-- .slide: data-background="#59d0ffcc" -->
-                  ## ES2018
+             ```javascript
+             async function maFunction() {
+                 const userInfo = await getUserInfo();
+                 const userID = userInfo.id;
 
-                  - Global
-                  - ES Modules !!
-                  - Regex Improvement
-                  - Promise.prototype.finnaly
-                  - BigInt
-                  - Class field
+                 const friendList = await getFriend(userID);
 
+                 console.log('friend list of ', userInfo.name, ':', friendList);
+             };
+             ```
+             En attendant, utilisez les coroutines !
 
 
-                  # Pratiquons !
+             <!-- .slide: data-background="#59d0ffcc" -->
+             ## SIMD API
 
-                  - [Code Combat](https://codecombat.com)
-                  - [Coding Game](https://www.codingame.com)
-                  - [NodeSchool](http://nodeschool.io/)
-                  - [plunker](https://plnkr.co/)
-                  - [jsfiddle](https://jsfiddle.net/)
+             Sigle Instruction Multiple Data
 
-                  - [**ES6 katas**](http://es6katas.org/)
+             Faire plusieurs opérations en une action
+             ```javascript
+             const a = new SIMD.Float32x4(1, 2, 3, 4);
+             const b = new SIMD.Float32x4(5, 6, 7, 8);
+             const c = SIMD.Float32x4.add(a,b); // float32x4[6,8,10,12]
+             ```
 
-                  - [Code kata](http://codekata.com/)
-                  - [Coding Dojo](http://codingdojo.org/kata/)
-                </script>
-            </section>
-        </div>
+             Des pérformances décuplé !
+
+
+             <!-- .slide: data-background="#59d0ffcc" -->
+             ## Trailing commas
+
+             ```javascript
+             const test = {
+                 clef: 2,
+                 clee: 3, // la virgule n'est plus toléré mais dans les specs...
+             };
+             ```
+             Pour du code review avec moins de bruit !
+
+             Perso j'aime pas, trop verbeux...
+
+
+
+             <!-- .slide: data-background="#59d0ffcc" -->
+             ## ES2018
+
+             - Global
+             - ES Modules !!
+             - Regex Improvement
+             - Promise.prototype.finnaly
+             - BigInt
+             - Class field
+
+
+
+             # Pratiquons !
+
+             - [Code Combat](https://codecombat.com)
+             - [Coding Game](https://www.codingame.com)
+             - [NodeSchool](http://nodeschool.io/)
+             - [plunker](https://plnkr.co/)
+             - [jsfiddle](https://jsfiddle.net/)
+
+             - [**ES6 katas**](http://es6katas.org/)
+
+             - [Code kata](http://codekata.com/)
+             - [Coding Dojo](http://codingdojo.org/kata/)
+          </script>
+        </section>
+      </div>
     </div>
 
-    <script type="application/javascript">const baseUrl = '/slides/javascript'</script>
+    <script type="application/javascript">
+      const baseUrl = "/slides/javascript";
+    </script>
     <script src="/reveal/lib/js/head.min.js"></script>
     <script src="/reveal/js/reveal.js"></script>
     <script src="/slides/reveal.init.js"></script>
-</body>
+  </body>
 </html>
