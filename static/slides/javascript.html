@@ -60,8 +60,9 @@
                   <!-- .slide: data-background="#D8C99B" -->
                   ## Les racines du JS, ES5
 
+                  - Instruction & commentaires
+                  - Variable & Assignation
                   - Types
-                  - Variables
                   - Fonctions
                   - Assertions
                   - Scopes
@@ -71,38 +72,102 @@
 
 
                   <!-- .slide: data-background="#D8C99B" -->
-                  ## Types
-
-                  JavaScript est un langage faiblement typé<br>
-                  le typage est induit !
+                  ## Instruction & Commentaires
                   ```javascript
-                    // Un commentaire
+                  // Un commentaire
+                  /* Un commentaire */
+                  var maVariable; // le ; indique la fin d'une instruction
+                  /* Ceci
+                  est
+                  un
+                  commentaire
+                  */
 
-                    // types prémitifs
-                    undefined;
-                    null;
-                    true; // booleen
-                    1; // number
-                    'toto'; // string
+                ```
 
-                    // types par références
-                    [1, true, 'une string', {}]; // array
-                    {cle: 1}; // object
+
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Variable 
+                  Déclaration & Assignation
+                  ```javascript
+                    // on déclare une variable et on lui assigne une valeur
+                    var uneChaineDeCaractere = 'Hello zenika';
                   ```
 
 
                   <!-- .slide: data-background="#D8C99B" -->
-                  ## Variables
+                  ## Types
 
                   ```javascript
-                    var maVariable; // undefined
+                  // types prémitifs
+                  1; // number
+                  'toto'; // string
+                  true; // booleen
+                  undefined;
+                  null;
 
-                    var unNombre = 1;
-                    var chaineDeCaractere = 'toto'; /* doubleQuote ça marche aussi */
-                    var booleen = true;
-                    maVariable = null;
-                    maVariable = uneFonction;
-                    maVariable = unNombre;
+                  // types par références
+                  [1, true, 'une string', {}]; // array
+                  {cle: 1}; // object
+
+                  ```
+
+
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Types
+                  JavaScript est un langage faiblement typé
+
+                  le typage est dynamique!
+
+                  ```javascript
+                  var unNombre = 1;
+                  var chaineDeCaractere = 'toto'; /* doubleQuote ça marche aussi */
+                  var booleen = true;
+                  maVariable = null;
+                  maVariable = unNombre;
+
+                  ```
+
+
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Typage explicite
+                  Un exemple avec Typescript
+                  ```javascript
+                    var unNombre: number = 1;
+                    var unBooleen: boolean = true;
+
+                    var unTableau: string[] = ['une string', 'paul', 'jacques'];
+                    
+                  ```
+
+
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Type primitif
+
+                  ```javascript
+                  var a = 10;
+
+                  var b = a ;
+
+                  b = 20;
+
+                  console.log(a);//10
+                  console.log(b);//20
+                  ```
+
+
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Type par référence
+
+                  ```javascript
+                  var x = {name: 'John'};
+
+                  var y = x;
+
+                  y.name = 'David';
+
+                  console.log(x.name);//'David'
+
                   ```
 
 
