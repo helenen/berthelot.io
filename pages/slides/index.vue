@@ -44,7 +44,7 @@ export default {
         },
         {
           title: 'JavaScript',
-          description: 'La presentation qui présente l\'ensemble des nouveautées javascript et repose les bases du langage.',
+          description: 'La presentation sur l\'ensemble des nouveautées javascript et repose les bases du langage.',
           url: '/slides/javascript.html',
           external: true
         },
@@ -52,6 +52,12 @@ export default {
           title: 'Les modules en JavaScript',
           description: 'Laissez-moi vous raconter l\' histoire des modules en Javascript.',
           url: '/slides/es-modules.html',
+          external: true
+        },
+        {
+          title: 'Redux & co',
+          description: 'Mais c\'est quoi redux ? Pourquoi Angular utilise le pattern MVC ? Redux répond à quel problème ?',
+          url: 'https://slides.com/florentberthelot/what-is-redux-and-all-redux-like',
           external: true
         },
         {
@@ -76,6 +82,12 @@ export default {
           title: 'Réconcilions Web & Audio',
           description: 'C\'est l\'histoire de deux mec qui veulent faire une pédale de distortion en Web pour réconcilier les surfeurs au bruit.',
           url: 'https://slides.com/benjaminplouzennec/reconcilions-web-et-audio#/7/4',
+          external: true
+        },
+        {
+          title: 'Headless CMS',
+          description: 'Retour d\'expérience sur l\'utilisation des headless CMS',
+          url: 'https://slides.com/florentberthelot/headless-cms',
           external: true
         },
         {
