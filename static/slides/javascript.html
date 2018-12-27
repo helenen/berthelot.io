@@ -277,7 +277,25 @@
                   else if (variable1 && variable2) {
                      console.log(('ça passe pas x2');
                   }
-                  var variable = null || 'toto'; // 'toto'
+                  ```
+
+                  
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Switch
+                  ```javascript
+                  var expr = 'Kakis';
+                  switch (expr) {
+                    case 'Oranges':
+                        console.log('Les oranges sont à  1€30 le kilo.');
+                        break;
+                    case 'Pommes':
+                    case 'Kakis':
+                        console.log('Les pommes et les kakis sont à 2€90 le kilo.');
+                        // Les pommes et les kakis sont à 2€90 le kilo.
+                        break;
+                    default:
+                        console.log('Désolé, il n\'y a plus de ' + expr + '.'); //Désolé, il n'y a plus de Kakis.
+                  }
                   ```
 
 
