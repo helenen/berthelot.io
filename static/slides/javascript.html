@@ -195,7 +195,45 @@
 
 
                   <!-- .slide: data-background="#D8C99B" -->
-                  ## Assertions 
+                  ## Opérateurs
+                  ```javascript
+                    5 + 22 ; // 27 
+                    4 - 7 ; // -3
+                    2 * 2 ; // 4
+                    41 % 7 ; // 6
+                    !true ; //false
+                  ```
+
+
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Algèbre de Boole
+
+                  ```javascript
+                   // a ET b est VRAI si et seulement si 
+                   // a est VRAI ET b est VRAI 
+
+                   var maVariable = true && false; // false
+
+                   // a OU b est VRAI si et seulement si 
+                   // a est VRAI OU b est VRAI
+
+                   var maVariable = false || "Chat"; // "Chat"
+                  ```
+
+
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Lois de Morgan
+                  ```javascript
+                   // non (A ou B) = (non A) et (non B)
+                   !(A || B) = !(A) && !(B)  
+
+                   // non (A et B) = (non A) ou (non B)
+                   !(A && B) = !(A) || !(B) 
+                  ```
+
+
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Assertions
 
                   ```javascript
                   '1' == 1; // true
@@ -224,9 +262,6 @@
                     1 >= 2;// false
                     1 < 2; // true
                     1 <= 2;// true
-
-                    true && false; // false
-                    true || false; // true
                   ```
 
                   <!-- .slide: data-background="#D8C99B" -->
