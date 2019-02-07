@@ -264,6 +264,7 @@
                     1 <= 2;// true
                   ```
 
+                  
                   <!-- .slide: data-background="#D8C99B" -->
                   ## Block conditionel
 
@@ -322,7 +323,28 @@
                   ```
 
 
-                  <!-- .slide: data-background="#D8C99B" -->
+                <!-- .slide: data-background="#D8C99B" -->
+                 ## Function Hoisting 
+                 Les déclarations de fonctions sont toujours exécuté avant le reste
+
+                 ```javascript
+                 // Definition hissée!
+                    definitionHisse();
+
+                 // TypeError: ce n'est pas une fonction
+                    definitionNotHisse();
+
+                    function definitionHisse() {
+                        console.log("Definition hissée!");
+                    }
+
+                    var definitionPasHisse = function () {
+                        console.log("Definition pas hisse!");
+                    };
+                 ```
+
+
+                 <!-- .slide: data-background="#D8C99B" -->
                   ## Scope
                   Scope = portée d'un symbole
 
@@ -351,7 +373,7 @@
                   Une fonction capture le scope parent !
 
                   ```javascript
-                  var bar = 'hellow';
+                  var bar = 'hello';
 
                   function foo () {
                       console.log(bar);
@@ -364,47 +386,116 @@
                   foo();   // 'world'
                   ```
 
+                  
+                 <!-- .slide: data-background="#D8C99B" -->
+                 ## Programmation orientée objet
 
-                  <!-- .slide: data-background="#D8C99B" -->
+                 Les classes sont des fonctions (constructeurs) en JS
+
+                 ```javascript
+                  function humain (size) {
+                   this.manger = function () {
+                    console.log('Miam');
+                   }
+                   this.size = size;
+                  }
+
+                  var chloe = new humain("1m68");
+
+                  console.log(chloe.manger()); // Miam
+                  console.log(chloe.size); // 1m68
+                  ```
+
+                  
+                 <!-- .slide: data-background="#D8C99B" -->
                   ## This
 
                   le mot clé this fait référence à un scope, mais lequel ?
 
-                  ```javascript
-                  function () {
-                      function foo() { console.log(this); }
+                   ```javascript
+                    function () {
+                        function foo() { console.log(this); }
 
-                      foo();            // this = scope appelant
-                      new foo();        // this = instance de la classe
-                      var object = { bar: foo };
-                      object.bar();     // this = object
-                      foo.call(object); // this = object
-                  }
-                  ```
+                        foo();            // this = scope appelant
+                        new foo();        // this = instance de la classe
+                        var object = { bar: foo };
+                        object.bar();     // this = object
+                        foo.call(object); // this = object
+                    }
+                    ```
 
 
                   <!-- .slide: data-background="#D8C99B" -->
                   ## Prototype
 
-                  Le JS n'est pas un langage Objet<br>
-                  Le JS est un langage prototypé
+                  Le JS n'est pas un langage Objet, pourtant...
+             
 
                   ```javascript
-                  function chien () {
-                   this.crie = function () {
-                    console.log('miaou');
+                  function humain () {
+                   this.manger = function () {
+                    console.log('Miam');
                    }
                   }
-                  ```
-                  ```javascript
-                  function chien () { }
-                  chien.prototype.crie = function () {
-                    console.log('miaou');
-                  };
+
+                  var chloe = new humain();
+                  var marc = new humain();
+                  marc.manger = function () {
+                      return "Ravioli";
+                  }
+
+                  console.log(marc.manger()); // Ravioli
+                  console.log(chloe.manger()); // Miam
                   ```
 
                   Notes: Le prototype d'un objet est utilisé pour fournir de façon dynamique des propriétés aux objets qui héritent du prototype
                   http://blog.xebia.fr/2013/06/10/javascript-retour-aux-bases-constructeur-prototype-et-heritage/
+
+
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Prototype
+
+                  Le JS est un langage prototypal
+             
+
+                  ```javascript
+                  function humain () {}
+
+                  humain.prototype.manger = function () {
+                      return "Miam";
+                  }
+
+                  var chloe = new humain();
+                  var marc = new humain();
+                  marc.__proto__.manger = function () {
+                      return "Ravioli";
+                  }
+
+                  console.log(marc.manger()); // Ravioli
+                  console.log(chloe.manger()); // Ravioli
+                  ```
+
+
+                  <!-- .slide: data-background="#D8C99B" -->
+                  ## Héritage
+
+                  En JS on se sert de la chaîne prototypal pour hériter
+
+                  ```javascript
+                  function humain () {}
+                  humain.prototype.manger = function () {
+                      return "Miam";
+                  }
+
+                  function etudiant(){}
+
+                  etudiant.prototype = humain.prototype; 
+                  etudiant.prototype.stage = true;
+
+                  var chloe = new etudiant(); 
+                  console.log(choe.manger()); // Miam
+                  console.log(choe.stage); // true
+                  ```
 
 
                   <!-- .slide: data-background="#D8C99B" -->
